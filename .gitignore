@@ -1,0 +1,43 @@
+# Sistema
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editores / locais
+.vscode/
+.idea/
+*.swp
+*.tmp
+
+# Python / Node acidentais
+__pycache__/
+node_modules/
+.venv/
+venv/
+
+# Segredos e ambiente
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+secrets.json
+*secret*
+*token*
+*credential*
+
+# Backups gerados localmente pelos scripts
+.backups/
+*.bak
+
+# Artefatos de validação local
+.validate-report.json
+
+# Histórico / caches
+.pytest_cache/
+.coverage
+dist/
+build/

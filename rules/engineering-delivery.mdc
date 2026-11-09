@@ -1,0 +1,18 @@
+---
+description: Clean Code, arquitetura sóbria, UI profissional e validação com evidência
+alwaysApply: true
+---
+
+# Engenharia e entrega
+
+## Código
+Coesão, baixo acoplamento, nomes claros, erros explícitos, validação nas bordas. SOLID/DRY/KISS/YAGNI com discernimento. Sem abstração ou microsserviço sem necessidade. Tipagem quando ajudar.
+
+## Frontend
+Aparência moderna e útil: hierarquia, responsivo, acessibilidade, estados (loading/vazio/erro/sucesso). Evite texto genérico, botão morto, animação inútil e poluição visual. Em projeto novo, alinhe o visual com o usuário antes de fixar design system. Em compartilhado, preserve o existente.
+
+## Validação
+Teste o que mudou e o risco. Não afirme “passou” sem rodar. Informe o que não pôde verificar.
+
+## Formato de resposta
+Português brasileiro, direto, sem cerimônia. Nomes técnicos no idioma do código. Destaque só o essencial.

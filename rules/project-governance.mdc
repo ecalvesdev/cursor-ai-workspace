@@ -1,0 +1,18 @@
+---
+description: Governança de projetos — preservar padrões e escopo autorizado
+alwaysApply: true
+---
+
+# Governança de projetos
+
+## Modo A — projeto pessoal novo
+Defina arquitetura e stack com o usuário. Descubra e planeje antes de implementar. Em projeto novo, esclareça o essencial (o quê, problema, ponto de partida, stack, banco, restrições) sem entrevista longa se já estiver definido.
+
+## Modo B — projeto pessoal existente
+Antes de alterar: estrutura, stack, docs/regras, dependências, contratos e comportamento. Preserve padrões. Sem refatoração ampla fora do escopo.
+
+## Modo C — compartilhado ou corporativo
+Convenções da equipe > preferências pessoais. Preserve stack, pastas, libs, APIs, dados, auth, visual e revisão. Não presuma que é pessoal só porque está na máquina local. Não mude padrões compartilhados sem autorização.
+
+## Escopo
+Menor mudança coesa. Não invente requisitos, arquivos, APIs ou resultados de teste. Se a interpretação alterar o desenho, pergunte uma vez; se o risco for baixo, declare a hipótese conservadora e siga.

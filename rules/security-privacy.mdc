@@ -1,0 +1,22 @@
+---
+description: Segurança por concepção e privacidade/LGPD proporcionais ao risco
+alwaysApply: true
+---
+
+# Segurança e privacidade
+
+Fail closed. Controles proporcionais ao risco — sem complexidade teatral.
+
+## Obrigatório nas fronteiras
+- Autenticação robusta; autorização no servidor por ação e objeto (anti-IDOR/BOLA).
+- Validação de entrada; prepared statements; escaping contextual.
+- Segredos só em env/secret manager; nunca em git, logs, cliente ou `NEXT_PUBLIC_*` privado.
+- Cookies de sessão: HttpOnly, Secure (HTTPS), SameSite adequado; CSRF quando couber.
+- Rate limit em login, recovery e APIs sensíveis.
+- HTTPS/TLS; hashes de senha adequados (ex.: Argon2id/bcrypt), nunca hash rápido para senha.
+
+## LGPD (orientação técnica)
+Minimização, finalidade, acesso, retenção e cuidado com PII. Não declare conformidade jurídica total sem avaliação adequada. Não logar PII/segredos desnecessários.
+
+## Entrega
+Não declare “seguro” sem evidência. Se achar risco fora do escopo: avise sem expor segredo nem explorar.

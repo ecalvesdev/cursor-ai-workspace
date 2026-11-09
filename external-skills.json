@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "description": "Manifesto de skills externas instaláveis no Cursor (escopo global).",
+  "installer_notes": [
+    "Antes de instalar, confirme as flags com --help do instalador.",
+    "Não versionar o conteúdo de terceiros neste repositório; registre origem e versão aqui.",
+    "Instalações globais usam o alvo Cursor (-a cursor -g quando suportado)."
+  ],
+  "skills": [
+    {
+      "id": "tlc-spec-driven",
+      "source": "https://github.com/tech-leads-club/agent-skills",
+      "package": "@tech-leads-club/agent-skills",
+      "install_command": "npx @tech-leads-club/agent-skills install -s tlc-spec-driven -a cursor -g",
+      "status": "installed",
+      "phase": 3,
+      "installed_at": "2026-11-09",
+      "install_path": "%USERPROFILE%\\.cursor\\skills\\tlc-spec-driven",
+      "installer_version_observed": "1.6.3",
+      "notes": "Metodologia Spec-Driven (Specify → Design → Tasks → Execute). Conteúdo de terceiros; não versionar no repo."
+    },
+    {
+      "id": "grill-me",
+      "source": "https://github.com/mattpocock/skills",
+      "install_command": "npx skills add https://github.com/mattpocock/skills -g -a cursor -s grill-me -y --copy",
+      "status": "installed",
+      "phase": 3,
+      "installed_at": "2026-11-09",
+      "install_path": "%USERPROFILE%\\.agents\\skills\\grill-me",
+      "notes": "Entrevista de requisitos. O CLI skills instalou em ~/.agents/skills (descoberta válida no Cursor)."
+    },
+    {
+      "id": "grilling",
+      "source": "https://github.com/mattpocock/skills",
+      "install_command": "npx skills add https://github.com/mattpocock/skills -g -a cursor -s grilling -y --copy",
+      "status": "installed",
+      "phase": 3,
+      "installed_at": "2026-11-09",
+      "install_path": "%USERPROFILE%\\.agents\\skills\\grilling",
+      "notes": "Stress-test de planos/decisões. Par de grill-me."
+    }
+  ]
+}
