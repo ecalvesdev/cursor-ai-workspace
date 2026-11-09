@@ -63,7 +63,40 @@ Detalhes em `external-skills.json`.
 
 User Rules da **conta** (Customize → Rules) são separadas e sincronizam por login.
 
-## Uso
+## Instalar em outro PC (Windows)
+
+Requisitos: Git, Node.js (npx), Cursor instalado, login GitHub com acesso a este repo privado.
+
+```powershell
+# 1) Clonar
+cd $env:USERPROFILE\Documents\Projetos
+git clone https://github.com/ecalvesdev/cursor-ai-workspace.git
+cd cursor-ai-workspace
+
+# 2) Backup do Cursor atual + instalar agents/skills/rules deste repo
+.\scripts\backup.ps1 -Label pre-install
+.\scripts\install.ps1
+.\scripts\homologate.ps1
+
+# 3) Skills externas (não vão no git; reinstalar pelo manifesto)
+npx --yes @tech-leads-club/agent-skills install -s tlc-spec-driven -a cursor -g
+npx --yes skills add https://github.com/mattpocock/skills -g -a cursor -s grill-me -s grilling -y --copy
+
+# 4) Conferir de novo
+.\scripts\validate.ps1 -CheckInstalled
+```
+
+Abra um **novo** Agent chat no Cursor. User Rules da conta sincronizam pelo login Cursor; as rules em arquivo vêm do `install.ps1`.
+
+## Atualizar um PC já instalado
+
+```powershell
+cd caminho\para\cursor-ai-workspace
+.\scripts\update.ps1
+# Se o manifesto de externas mudou, rode de novo os comandos npx da seção acima.
+```
+
+## Uso local (scripts)
 
 ```powershell
 .\scripts\validate.ps1
@@ -73,8 +106,6 @@ User Rules da **conta** (Customize → Rules) são separadas e sincronizam por l
 .\scripts\homologate.ps1
 .\scripts\update.ps1
 ```
-
-Após instalar, abra um **novo** Agent chat no Cursor.
 
 ## O que este repo NÃO faz
 
