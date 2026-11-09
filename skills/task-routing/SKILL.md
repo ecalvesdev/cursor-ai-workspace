@@ -19,13 +19,15 @@ Escolher o caminho de menor custo que ainda cubra risco e qualidade.
 | Complexa | módulo novo, auth, integração | grill/TLC conforme ambiguidade → especialistas |
 | Crítica | migração, produção, irreversível | Aprovação + impacto + segurança + verificação |
 
-## Roteamento
-1. Preferir skills/procedimentos ao criar subagente.
-2. Subagente só se: isolamento de contexto, paralelismo seguro, auditoria independente ou expertise estreita.
-3. Não paralelizar escritores nos mesmos arquivos sem isolamento (worktree se suportado).
-4. Não convocar “toda a equipe” para tarefa simples.
-5. Se TLC estiver instalada e a tarefa for complexa/nova: seguir Specify→Design→Tasks→Execute; não inventar metodologia paralela.
-6. Se requisitos estiverem ambíguos e o impacto for alto: usar grill-me/grilling antes de codificar.
+## Roteamento (o chefe ACIONA — não pergunta qual agente usar)
+1. Simples: executar no agente principal.
+2. Média+: abrir Task nos líderes (`architect`, `backend-engineer`, `frontend-engineer`, `ui-ux-designer`, `automation-engineer`, `devops-engineer`, `security-auditor`, `qa-engineer`) conforme a tabela da rule `master-orchestrator`.
+3. Subagente também quando: isolamento, paralelismo seguro, auditoria independente.
+4. Não paralelizar writers nos mesmos arquivos.
+5. Não convocar a equipe inteira por default — só os necessários.
+6. Complexa/nova com TLC: Specify→Design→Tasks→Execute.
+7. Ambíguo + impacto alto: grill-me/grilling antes de codificar.
 
 ## Saída
-Classe · skills a carregar · agentes (se houver) · aprovações necessárias · o que NÃO fazer agora.
+Classe · agentes a acionar (e por quê) · skills · aprovações · o que NÃO fazer agora.  
+Em seguida **dispare os Tasks**; não pare no plano.

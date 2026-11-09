@@ -26,6 +26,7 @@ else {
 }
 
 $expectedAgents = @(
+    "chefe",
     "architect",
     "backend-engineer",
     "frontend-engineer",
@@ -51,7 +52,7 @@ foreach ($name in $expectedAgents) {
 }
 
 $expectedOwnSkills = @(
-    "project-governance", "repository-discovery", "task-routing", "change-impact-analysis", "completion-report",
+    "master-orchestration", "project-governance", "repository-discovery", "task-routing", "change-impact-analysis", "completion-report",
     "architecture-review", "data-modeling", "api-contracts",
     "backend-architecture", "api-development", "django-development", "python-clean-code", "database-optimization",
     "nextjs-development", "react-architecture", "javascript-typescript", "responsive-layout", "frontend-performance", "web-accessibility", "design-system",

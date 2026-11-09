@@ -38,6 +38,16 @@
       "installed_at": "2026-11-09",
       "install_path": "%USERPROFILE%\\.agents\\skills\\grilling",
       "notes": "Stress-test de planos/decisões. Par de grill-me."
+    },
+    {
+      "id": "chief-of-staff",
+      "source": "https://github.com/mattpocock/skills",
+      "install_command": "npx skills add https://github.com/mattpocock/skills -g -a cursor -s chief-of-staff -y --copy",
+      "status": "installed",
+      "phase": "chefe",
+      "installed_at": "2026-11-09",
+      "install_path": "%USERPROFILE%\\.agents\\skills\\chief-of-staff",
+      "notes": "Coordenação de subagentes em metas longas na mesma sessão. Complementa o agente chefe."
     }
   ]
 }

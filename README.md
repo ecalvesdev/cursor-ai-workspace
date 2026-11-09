@@ -9,19 +9,19 @@ Objetivo: sincronizar **agents**, **skills próprias** e **rules** entre computa
 | Camada | Conteúdo |
 |--------|----------|
 | Rules | 5 (Master Orchestrator + governança + segurança + tokens + entrega) |
-| Agents | 8 líderes técnicos |
-| Skills próprias | 32 |
-| Skills externas | `tlc-spec-driven`, `grill-me`, `grilling` (não versionar conteúdo) |
+| Agents | 9 (`chefe` + 8 líderes) |
+| Skills próprias | 33 |
+| Skills externas | `tlc-spec-driven`, `grill-me`, `grilling`, `chief-of-staff` |
 | Scripts | `backup`, `install`, `update`, `validate`, `homologate` |
-| Remoto GitHub | **não criado** |
-| Commit inicial | **não criado** (peça se quiser) |
+| Remoto GitHub | https://github.com/ecalvesdev/cursor-ai-workspace (privado) |
 
-Homologação estrutural: ver [HOMOLOGATION.md](HOMOLOGATION.md) (`.\scripts\homologate.ps1` → 45 pass).
+Homologação estrutural: ver [HOMOLOGATION.md](HOMOLOGATION.md).
 
 ## Agents
 
 | Agente | Função |
 |--------|--------|
+| `chefe` | **Chefe total** — classifica e aciona sozinho os especialistas via Task |
 | `architect` | Requisitos, desenho, dados, APIs, codebase |
 | `backend-engineer` | APIs, domínio, persistência, auth, jobs |
 | `frontend-engineer` | UI web, estado, integração, performance, a11y |
@@ -33,7 +33,7 @@ Homologação estrutural: ver [HOMOLOGATION.md](HOMOLOGATION.md) (`.\scripts\hom
 
 ## Skills próprias (resumo)
 
-Orquestração: `project-governance`, `repository-discovery`, `task-routing`, `change-impact-analysis`, `completion-report`  
+Orquestração: `master-orchestration`, `project-governance`, `repository-discovery`, `task-routing`, `change-impact-analysis`, `completion-report`  
 Arquitetura: `architecture-review`, `data-modeling`, `api-contracts`  
 Backend: `backend-architecture`, `api-development`, `django-development`, `python-clean-code`, `database-optimization`  
 Frontend: `nextjs-development`, `react-architecture`, `javascript-typescript`, `responsive-layout`, `frontend-performance`, `web-accessibility`, `design-system`  
@@ -80,13 +80,15 @@ cd cursor-ai-workspace
 
 # 3) Skills externas (não vão no git; reinstalar pelo manifesto)
 npx --yes @tech-leads-club/agent-skills install -s tlc-spec-driven -a cursor -g
-npx --yes skills add https://github.com/mattpocock/skills -g -a cursor -s grill-me -s grilling -y --copy
+npx --yes skills add https://github.com/mattpocock/skills -g -a cursor -s grill-me -s grilling -s chief-of-staff -y --copy
 
 # 4) Conferir de novo
 .\scripts\validate.ps1 -CheckInstalled
 ```
 
-Abra um **novo** Agent chat no Cursor. User Rules da conta sincronizam pelo login Cursor; as rules em arquivo vêm do `install.ps1`.
+Abra um **novo** Agent chat no Cursor. O chat principal já age como **chefe** (rule `master-orchestrator.mdc` alwaysApply) e deve acionar sozinho os agentes via Task. Você também pode invocar `/chefe` explicitamente.
+
+User Rules da conta sincronizam pelo login Cursor; as rules em arquivo vêm do `install.ps1`.
 
 ## Atualizar um PC já instalado
 
